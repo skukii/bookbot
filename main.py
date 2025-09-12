@@ -7,7 +7,6 @@ def main():
         file_contents = f.read()
         num_words = get_num_words(file_contents)
     
-    
     print(num_words," words found in the document")
 
 main()
