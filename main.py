@@ -8,9 +8,24 @@ def main():
     
     num_words = get_num_words(file_contents)
     chars = mapping_chars(file_contents)
+
+
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at ", path_to_file, "...")
+    print("----------- Word Count ----------")
     
-    print(num_words," words found in the document")
-    print(chars)
+    print("Found ", num_words," total words")
+    print("--------- Character Count -------")
+    sorted_chars = sorted(
+        chars.items(), 
+        key=lambda item: item[1],
+        reverse=True               
+    )
+    
+    for char, count in sorted_chars:
+        print(f"{char}: {count}")
+    
+    print("============= END ===============")
 
 
 
