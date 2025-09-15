@@ -6,9 +6,9 @@ def mapping_chars(s):
     d = {}
 
     for k in s:
-        if k not in d.values():
-            d[k] = 1
-        else:
-            h = d.get(k)
-            d.update({k: h+1})
+        if k.isalpha():
+            if k not in d:
+                d[k] = 1
+            else:
+                d[k] += 1
     return d
