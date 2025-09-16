@@ -1,9 +1,16 @@
 from stats import get_num_words, mapping_chars
+import sys
 
 def main():
-    path_to_file = "books/frankenstein.txt"
+    arguments = sys.argv
 
-    with open(path_to_file) as f:
+    if len(arguments) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book = arguments[1]
+
+    with open(book) as f:
         file_contents = f.read()
     
     num_words = get_num_words(file_contents)
@@ -11,7 +18,7 @@ def main():
 
 
     print("============ BOOKBOT ============")
-    print("Analyzing book found at ", path_to_file, "...")
+    print("Analyzing book found at ", book, "...")
     print("----------- Word Count ----------")
     
     print("Found ", num_words," total words")
